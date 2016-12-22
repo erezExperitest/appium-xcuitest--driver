@@ -172,7 +172,7 @@ describe('XCUITestDriver - basics', function () {
     });
   });
 
-  describe.skip('contexts', () => {
+  describe('contexts', () => {
     before(async () => {
       let el = await driver.elementByAccessibilityId('Web View');
       await driver.execute('mobile: scroll', {element: el, toVisible: true});

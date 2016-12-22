@@ -104,7 +104,7 @@ describe('XCUITestDriver - element(s)', function () {
     });
   });
 
-  describe('interactions', function () {
+  describe.only('interactions', function () { // eslint-disable-line
     describe('text fields', () => {
       let text1 = 'bunchoftext';
       let text2 = 'differenttext';
@@ -114,7 +114,7 @@ describe('XCUITestDriver - element(s)', function () {
 
       beforeEach(async function () {
         // TODO: investigate why these break on Travis.
-        if (process.env.TRAVIS) this.skip();
+        // if (process.env.TRAVIS) this.skip();
 
         let el = await driver.elementByAccessibilityId('Text Fields');
         await driver.execute('mobile: scroll', {element: el, toVisible: true});
